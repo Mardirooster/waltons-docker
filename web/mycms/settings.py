@@ -146,7 +146,9 @@ INSTALLED_APPS = [
     'djangocms_teaser',
     'djangocms_video',
     'reversion',
+    'easy_thumbnails',
     'filer',
+    'mptt',
     'aldryn_bootstrap3',
     'mycms'
 ]
@@ -194,6 +196,14 @@ DATABASES = {
         'PORT': os.environ['DB_PORT']
     }
 }
+
+THUMBNAIL_PROCESSORS = (
+    'easy_thumbnails.processors.colorspace',
+    'easy_thumbnails.processors.autocrop',
+    #'easy_thumbnails.processors.scale_and_crop',
+    'filer.thumbnail_processors.scale_and_crop_with_subject_location',
+    'easy_thumbnails.processors.filters',
+)
 
 MIGRATION_MODULES = {
     
