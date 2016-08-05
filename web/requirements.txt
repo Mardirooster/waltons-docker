@@ -23,3 +23,5 @@ django-sekizai>=0.7
 six
 gunicorn==19.3.0
 psycopg2==2.6
+filer
+aldryn_bootstrap3

@@ -146,6 +146,8 @@ INSTALLED_APPS = [
     'djangocms_teaser',
     'djangocms_video',
     'reversion',
+    'filer',
+    'aldryn_bootstrap3',
     'mycms'
 ]
 
