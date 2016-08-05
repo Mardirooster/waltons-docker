@@ -28,4 +28,4 @@ now sort out the stuff on the machine
 
     python manage.py createsuperuser
 
-note: to update the files on the web-container, run machine-update.sh from the web folder
+note: to update the files on the web-container, run ``source machine-update.sh`` from the web folder
