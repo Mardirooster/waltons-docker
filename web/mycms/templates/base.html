@@ -10,9 +10,9 @@
         <link href="{% static 'dist/css/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
 
         <!-- Loading Flat UI -->
-        <link href="{% static 'dist/css/flat-ui.css' %}" rel="stylesheet">
-        <link href="{% static 'docs/assets/css/demo.css' %}" rel="stylesheet">
-        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+<!--         <link href="{% static 'dist/css/flat-ui.css' %}" rel="stylesheet">
+ --><!--         <link href="{% static 'docs/assets/css/demo.css' %}" rel="stylesheet">
+ -->        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
         {% render_block "css" %}
     </head>
     <body>
@@ -35,8 +35,18 @@
                 </div>
             </div>
         </div>
+        {% placeholder carousel %}
         <div class="container">
-            {% block content %}{% endblock content %}
+            
+
+
+            <div class="row">
+                <div class="col-md-3" id="leftCol">
+                </div>
+                <div class="col-md-9" id="rightCol">
+                    {% block content %}{% endblock content %}
+                </div>
+            </div>
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>

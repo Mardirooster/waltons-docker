@@ -7,7 +7,7 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ child.get_menu_title }} <b class="caret"></b></a>
             <span class="dropdown-arrow"></span>
             <ul class="dropdown-menu">
-                <li><a href="#">Menu Filler</a></li>
+                <li><a href="{{ child.get_absolute_url }}"><span>{{ child.get_menu_title }}</span></a></li>
                 <li class="divider"></li>
                 {% show_menu from_level to_level extra_inactive extra_active template "" "" child %}
             </ul>

@@ -184,7 +184,13 @@ CMS_TEMPLATES = (
 
 CMS_PERMISSION = True
 
-CMS_PLACEHOLDER_CONF = {}
+CMS_PLACEHOLDER_CONF = {
+    'carousel': {
+        'plugins': ['Bootstrap3CarouselCMSPlugin']
+    }
+}
+
+
 
 DATABASES = {
     'default': {
