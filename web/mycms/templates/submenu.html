@@ -1,0 +1,10 @@
+{% load i18n menu_tags cache columns %}
+
+<li><a href="#">Item {{ child.get_menu_title }} {{ child.children }} {{ child.children.1.children }} {{ child.children.0.children }} </a></li>
+
+{% for item in child.children %}
+    <li><a href="#">Item {{ item.get_menu_title }} {{ item.children }}</a></li>
+    {% for child in item.children %}
+        <li><a href="#">Item {{ child.children }}</a></li>
+    {% endfor %}
+{% endfor %}
