@@ -150,7 +150,8 @@ INSTALLED_APPS = [
     'filer',
     'mptt',
     'aldryn_bootstrap3',
-    'mycms'
+    'mycms',
+    'columns'
 ]
 
 LANGUAGES = (

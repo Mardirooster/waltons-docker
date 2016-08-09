@@ -1,3 +1,10 @@
+<<<<<<< HEAD
 virt
 .env
 *.pyc
+=======
+*.pyc
+aldryn_bootstrap3.egg-info
+.DS_Store
+.idea/
+>>>>>>> 9395b521db89bd0fb82f19da40e66c7050ee8db4
