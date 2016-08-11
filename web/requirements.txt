@@ -26,3 +26,4 @@ psycopg2==2.6
 django-filer
 git+https://github.com/Mardirooster/aldryn-bootstrap3
 django-columns
+git+https://github.com/digitalemagine/djangocms-bootstrap-carousel

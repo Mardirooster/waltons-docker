@@ -14,7 +14,6 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 """
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -151,7 +150,8 @@ INSTALLED_APPS = [
     'mptt',
     'aldryn_bootstrap3',
     'mycms',
-    'columns'
+    'columns',
+#    'information',
 ]
 
 LANGUAGES = (
@@ -188,6 +188,9 @@ CMS_PERMISSION = True
 CMS_PLACEHOLDER_CONF = {
     'carousel': {
         'plugins': ['Bootstrap3CarouselCMSPlugin']
+    },
+    'menucarousel': {
+        'plugins': ['Bootstrap3CarouselCMSPlugin']
     }
 }
 
@@ -215,3 +218,6 @@ THUMBNAIL_PROCESSORS = (
 MIGRATION_MODULES = {
     
 }
+
+
+#fuck

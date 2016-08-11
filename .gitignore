@@ -1,10 +1,21 @@
-<<<<<<< HEAD
-virt
-.env
-*.pyc
-=======
-*.pyc
-aldryn_bootstrap3.egg-info
-.DS_Store
-.idea/
->>>>>>> 9395b521db89bd0fb82f19da40e66c7050ee8db4
+update-local.sh
+web/media/
+web/static/Dockerfile
+web/static/_data/
+web/static/admin/
+web/static/aldryn_bootstrap3/
+web/static/cms/
+web/static/css/columns.css
+web/static/djangocms_admin_style/
+web/static/djangocms_googlemap/
+web/static/djangocms_text_ckeditor/
+web/static/filer/
+web/static/js/
+web/static/manage.py
+web/static/mptt/
+web/static/mycms/
+web/static/preview_images/
+web/static/requirements.txt
+web/static/sortedm2m/
+web/static/treebeard/
+web/test
