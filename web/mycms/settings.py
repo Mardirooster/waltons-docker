@@ -151,6 +151,8 @@ INSTALLED_APPS = [
     'aldryn_bootstrap3',
     'mycms',
     'columns',
+    'classes',
+    'records',
 #    'information',
 ]
 

@@ -3,7 +3,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>{% block title %}This is my new project home page{% endblock title %}</title>
+        <title>{% block title %}Default Home Page{% endblock title %}</title>
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <!-- Theme CSS -->
         <!-- Loading Bootstrap -->
@@ -27,7 +27,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">My Store</a>
+                <a class="navbar-brand" href="#">Waltons</a>
             </div>
 
             <div class="collapse navbar-collapse js-navbar-collapse">
@@ -42,12 +42,19 @@
             {% placeholder carousel %}
     <!-- Carousel nav -->
         </div>
-        <div class="container">
+        <div class="container-fluid">
             
 
 
-            <div class="row">
-                <div class="col-md-3" id="leftCol">
+            <div class="row row-offcanvas row-offcanvas-left">
+                <div class="col-md-3 sidebar-offcanvas" id="sidebar" role="navigation">
+                    <div class="sidebar-nav"> <!-- nav nav-stacked"> -->
+                        <ul class="nav">
+                            {% show_menu 1 2 100 100 "sidemenu.html" %}
+                        </ul>
+                    </div>
+
+
                 </div>
                 <div class="col-md-9" id="rightCol">
                     {% block content %}{% endblock content %}
@@ -58,6 +65,13 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>
         <script src="{% static 'dist/js/menu.js' %}"></script>
         <script src="{% static 'dist/css/carousel.css' %}"></script>
+        <script>
+        $(document).ready(function() {
+          $('[data-toggle=offcanvas]').click(function() {
+            $('.row-offcanvas').toggleClass('active');
+          });
+        });
+        </script>
         {% render_block "js" %}
     </body>
 </html>
