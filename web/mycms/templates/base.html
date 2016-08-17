@@ -4,11 +4,42 @@
     <head>
         <meta charset="utf-8">
         <title>{% block title %}Default Home Page{% endblock title %}</title>
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <!-- Theme CSS -->
-        <!-- Loading Bootstrap -->
-        <link href="{% static 'dist/css/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-        <link href="{% static 'dist/css/menu.css' %}" rel="stylesheet">
+        <meta name="description" content="The Project a Bootstrap-based, Responsive HTML5 Template">
+        <meta name="author" content="htmlcoder.me">
+
+        <!-- Mobile Meta -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="images/favicon.ico">
+
+        <!-- Web Fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Raleway:700,400,300' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
+
+        <!-- Bootstrap core CSS -->
+        <link href="{% static 'bootstrap/css/bootstrap.css' %}" rel="stylesheet">
+
+        <!-- Font Awesome CSS -->
+        <link href="{% static 'fonts/font-awesome/css/font-awesome.css' %}" rel="stylesheet">
+
+        <!-- Fontello CSS -->
+        <link href="{% static 'fonts/fontello/css/fontello.css' %}" rel="stylesheet">
+
+        <!-- Plugins -->
+        <link href="{% static 'plugins/magnific-popup/magnific-popup.css' %}" rel="stylesheet">
+        <link href="{% static 'plugins/rs-plugin/css/settings.css' %}" rel="stylesheet">
+        <link href="{% static 'css/animations.css' %}" rel="stylesheet">
+        <link href="{% static 'plugins/owl-carousel/owl.carousel.css' %}" rel="stylesheet">
+        <link href="{% static 'plugins/owl-carousel/owl.transitions.css' %}" rel="stylesheet">
+        <link href="{% static 'plugins/hover/hover-min.css' %}" rel="stylesheet">      
+        
+        <!-- The Project core CSS file -->
+        <link href="{% static 'css/style.css' %}" rel="stylesheet" >
+        <!-- Color Scheme (In order to change the color scheme, replace the blue.css with the color scheme that you prefer)-->
+        <link href="{% static 'css/skins/cool_green.css' %}" rel="stylesheet">
 
         <!-- Loading Flat UI -->
 <!--         <link href="{% static 'dist/css/flat-ui.css' %}" rel="stylesheet">
@@ -16,27 +47,366 @@
  -->        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
         {% render_block "css" %}
     </head>
-    <body>
+    <body class="no-trans front-page   page-loader-1">
         {% cms_toolbar %}
-        <div class="container">
-          <nav class="navbar navbar-fixed-top navbar-inverse">
-            <div class="navbar-header">
-                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".js-navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Waltons</a>
+
+        <!-- scrollToTop -->
+        <!-- ================ -->
+        <div class="scrollToTop circle"><i class="icon-up-open-big"></i></div>
+
+
+        <!-- page wrapper start -->
+        <!-- ================ -->
+        <div class="page-wrapper">
+        <!-- page wrapper start -->
+        <!-- ================ -->
+        <div class="page-wrapper">
+        
+            <!-- header-container start -->
+            <div class="header-container">
+                
+                <!-- header-top start -->
+                <!-- classes:  -->
+                <!-- "dark": dark version of header top e.g. class="header-top dark" -->
+                <!-- "colored": colored version of header top e.g. class="header-top colored" -->
+                <!-- ================ -->
+                <div class="header-top  colored">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-2 col-sm-5">
+                                <!-- header-top-first start -->
+                                <!-- ================ -->
+                                <div class="header-top-first clearfix">
+                                    <ul class="social-links circle small clearfix hidden-xs">
+                                        <li class="twitter"><a target="_blank" href="https://twitter.com/newschool_ie"><i class="fa fa-twitter"></i></a></li>
+                                        <li class="skype"><a target="_blank" href="http://www.skype.com"><i class="fa fa-skype"></i></a></li>
+                                        <li class="linkedin"><a target="_blank" href="http://www.linkedin.com"><i class="fa fa-linkedin"></i></a></li>
+                                        <li class="googleplus"><a target="_blank" href="http://plus.google.com"><i class="fa fa-google-plus"></i></a></li>
+                                        <li class="youtube"><a target="_blank" href="https://www.youtube.com/channel/UCFziV-uH5Up8y7IBMIhFvCw"><i class="fa fa-youtube-play"></i></a></li>
+                                        <li class="flickr"><a target="_blank" href="http://www.flickr.com"><i class="fa fa-flickr"></i></a></li>
+                                        <li class="facebook"><a target="_blank" href="https://www.facebook.com/newschool.ie"><i class="fa fa-facebook"></i></a></li>
+                                        <li class="pinterest"><a target="_blank" href="http://www.pinterest.com"><i class="fa fa-pinterest"></i></a></li>
+                                    </ul>
+                                    <div class="social-links hidden-lg hidden-md hidden-sm circle small">
+                                        <div class="btn-group dropdown">
+                                            <button type="button" class="btn dropdown-toggle" data-toggle="dropdown"><i class="fa fa-share-alt"></i></button>
+                                            <ul class="dropdown-menu dropdown-animation">
+                                                <li class="twitter"><a target="_blank" href="https://twitter.com/newschool_ie"><i class="fa fa-twitter"></i></a></li>
+                                                <li class="skype"><a target="_blank" href="http://www.skype.com"><i class="fa fa-skype"></i></a></li>
+                                                <li class="linkedin"><a target="_blank" href="http://www.linkedin.com"><i class="fa fa-linkedin"></i></a></li>
+                                                <li class="googleplus"><a target="_blank" href="http://plus.google.com"><i class="fa fa-google-plus"></i></a></li>
+                                                <li class="youtube"><a target="_blank" href="https://www.youtube.com/channel/UCFziV-uH5Up8y7IBMIhFvCw"><i class="fa fa-youtube-play"></i></a></li>
+                                                <li class="flickr"><a target="_blank" href="http://www.flickr.com"><i class="fa fa-flickr"></i></a></li>
+                                                <li class="facebook"><a target="_blank" href="https://www.facebook.com/newschool.ie"><i class="fa fa-facebook"></i></a></li>
+                                                <li class="pinterest"><a target="_blank" href="http://www.pinterest.com"><i class="fa fa-pinterest"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- header-top-first end -->
+                            </div>
+                            <div class="col-xs-10 col-sm-7">
+
+                                <!-- header-top-second start -->
+                                <!-- ================ -->
+                                <div id="header-top-second"  class="clearfix text-right">
+                                    <nav>
+                                        <ul class="list-inline">
+                                            <li><a class="link-light " href="#"><i class="fa fa-users pr-5"></i>Alumni</a></li>
+                                            <li><a class="link-light " href="#"><i class="fa fa-user pr-5"></i>Staff/Faculty</a></li>
+                                            <li><a class="link-light " href="#"><i class="fa fa-child pr-5"></i>Students</a></li>
+                                            <li class="hidden-sm hidden-xs"><a class="link-light" href="#"><i class="fa fa-flask pr-5"></i>Researches</a></li>
+                                            <li class="hidden-sm hidden-xs"><a class="link-light" href="#"><i class="fa fa-info-circle pr-5"></i>Information</a></li>
+                                            <li class="hidden-sm hidden-xs"><strong class="pl-5">Call Us:</strong> +12 123 123 123</li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                                <!-- header-top-second end -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- header-top end -->
+                
+                <!-- header start -->
+                <!-- classes:  -->
+                <!-- "fixed": enables fixed navigation mode (sticky menu) e.g. class="header fixed clearfix" -->
+                <!-- "dark": dark version of header e.g. class="header dark clearfix" -->
+                <!-- "full-width": mandatory class for the full-width menu layout -->
+                <!-- "centered": mandatory class for the centered logo layout -->
+                <!-- ================ --> 
+                <header class="header centered fixed    clearfix">
+                    
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <!-- header-left start -->
+                                <!-- ================ -->
+                                <div class="header-left clearfix">
+
+                                    <!-- logo -->
+                                    <div id="logo" class="logo">
+                                        <a href="#"><img id="logo_img" src="{% static 'images/logo_cool_green.png' %}" alt="Waltons"></a>
+                                    </div>
+
+                                    
+                                    
+                                </div>
+                                <!-- header-left end -->
+
+                            </div>
+                            <div class="col-md-12">
+                    
+                                <!-- header-right start -->
+                                <!-- ================ -->
+                                <div class="header-right clearfix">
+                                    
+                                <!-- main-navigation start -->
+                                <!-- classes: -->
+                                <!-- "onclick": Makes the dropdowns open on click, this the default bootstrap behavior e.g. class="main-navigation onclick" -->
+                                <!-- "animated": Enables animations on dropdowns opening e.g. class="main-navigation animated" -->
+                                <!-- "with-dropdown-buttons": Mandatory class that adds extra space, to the main navigation, for the search and cart dropdowns -->
+                                <!-- ================ -->
+                                <div class="main-navigation  animated with-dropdown-buttons">
+
+                                    <!-- navbar start -->
+                                    <!-- ================ -->
+                                    <nav class="navbar navbar-default" role="navigation">
+                                        <div class="container-fluid">
+
+                                            <!-- Toggle get grouped for better mobile display -->
+                                            <div class="navbar-header">
+                                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
+                                                    <span class="sr-only">Toggle navigation</span>
+                                                    <span class="icon-bar"></span>
+                                                    <span class="icon-bar"></span>
+                                                    <span class="icon-bar"></span>
+                                                </button>
+                                                
+                                            </div>
+
+                                            <!-- Collect the nav links, forms, and other content for toggling -->
+                                            <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                                                <!-- main-menu -->
+                                                <ul class="nav navbar-nav ">
+
+
+                                                    {% show_menu 0 100 100 100 "menu.html" %}
+
+                                                    <!-- mega-menu start -->
+                                                    <li class="dropdown active mega-menu">
+                                                        <a href="index.html" class="dropdown-toggle" data-toggle="dropdown">Home</a>
+                                                        <ul class="dropdown-menu">
+                                                            <li>
+                                                                <div class="row">
+                                                                    <div class="col-md-12">
+                                                                        <h4 class="title"><i class="fa fa-laptop pr-10"></i> Demos</h4>
+                                                                        <div class="row">
+                                                                            <div class="col-sm-6 col-md-3">
+                                                                                <div class="divider"></div>
+                                                                                <ul class="menu">
+                                                                                    <li ><a href="index.html"><i class="icon-home pr-10"></i>Home Default</a></li>
+                                                                                    <li ><a href="index-corporate-1.html"><i class="icon-suitcase pr-10"></i>Corporate 1</a></li>
+                                                                                    <li ><a href="index-corporate-2.html"><i class="icon-suitcase pr-10"></i>Corporate 2</a></li>
+                                                                                    <li ><a href="index-corporate-3.html"><i class="icon-suitcase pr-10"></i>Corporate 3</a></li>
+                                                                                    <li ><a href="index-corporate-4.html"><i class="icon-home pr-10"></i>Corporate 4 <span class="badge">NEW</span></a></li>
+                                                                                    <li ><a href="index-shop.html"><i class="icon-basket-1 pr-10"></i>Commerce 1</a></li>
+                                                                                </ul>
+                                                                            </div>
+                                                                            <div class="col-sm-6 col-md-3">
+                                                                                <div class="divider"></div>
+                                                                                <ul class="menu">
+                                                                                    <li ><a href="index-shop-2.html"><i class="icon-basket-1 pr-10"></i>Commerce 2</a></li>
+                                                                                    <li ><a href="index-portfolio.html"><i class="icon-briefcase pr-10"></i>Portfolio/Agency</a></li>
+                                                                                    <li ><a href="index-medical.html"><i class="fa fa-ambulance pr-10"></i>Medical</a></li>
+                                                                                    <li ><a href="index-restaurant.html"><i class="fa fa-cutlery pr-10"></i>Restaurant</a></li>
+                                                                                    <li ><a href="index-wedding.html"><i class="icon-heart pr-10"></i>Wedding</a></li>
+                                                                                    <li ><a href="index-landing.html"><i class="fa fa-star pr-10"></i>Landing Page</a></li>
+                                                                                </ul>
+                                                                            </div>
+                                                                            <div class="col-sm-6 col-md-3">
+                                                                                <div class="divider"></div>
+                                                                                <ul class="menu">
+                                                                                    <li ><a href="page-coming-soon.html"><i class="fa fa-clock-o pr-10"></i>Coming Soon</a></li>
+                                                                                    <li ><a href="index-one-page.html"><i class="icon-home pr-10"></i>One Page Version</a></li>
+                                                                                    <li ><a href="index-construction.html"><i class="fa fa-building pr-10"></i>Construction <span class="badge">v1.1</span></a></li>
+                                                                                    <li class="active"><a href="index-education.html"><i class="fa fa-graduation-cap pr-10"></i>Education <span class="badge">v1.1</span></a></li>
+                                                                                    <li ><a href="index-hotel.html"><i class="fa fa-bed pr-10"></i>Hotel <span class="badge">v1.1</span></a></li>
+                                                                                    <li ><a href="index-blog.html"><i class="fa fa-pencil pr-10"></i>Blog <span class="badge">v1.1</span></a></li>
+                                                                                </ul>
+                                                                            </div>
+                                                                            <div class="col-sm-6 col-md-3">
+                                                                                <div class="divider"></div>
+                                                                                <ul class="menu">
+                                                                                    <li ><a href="index-beauty.html"><i class="fa fa-magic pr-10"></i>Beauty Center <span class="badge">v1.1</span></a></li>
+                                                                                    <li ><a href="index-gym.html"><i class="fa fa-heartbeat pr-10"></i>Gym <span class="badge">NEW</span></a></li>
+                                                                                    <li ><a href="index-resume.html"><i class="fa fa-user pr-10"></i>Resume <span class="badge">NEW</span></a></li>
+                                                                                    <li ><a href="index-agency.html"><i class="fa fa-users pr-10"></i>Agency <span class="badge">NEW</span></a></li>
+                                                                                    <li ><a href="index-logistics.html"><i class="fa fa-truck pr-10"></i>Logistics <span class="badge">NEW</span></a></li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <!-- mega-menu end -->
+                                                    <!-- mega-menu start -->
+                                                    <li class="dropdown  mega-menu">
+                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages</a>
+                                                        <ul class="dropdown-menu">
+                                                            <li>
+                                                                <div class="row">
+                                                                    <div class="col-lg-8 col-md-9">
+                                                                        <h4 class="title">Pages</h4>
+                                                                        <div class="row">
+                                                                            <div class="col-sm-4">
+                                                                                <div class="divider"></div>
+                                                                                <ul class="menu">
+                                                                                    <li ><a href="page-about.html"><i class="fa fa-angle-right"></i>About Us 1</a></li>
+                                                                                    <li ><a href="page-about-2.html"><i class="fa fa-angle-right"></i>About Us 2</a></li>
+                                                                                    <li ><a href="page-about-3.html"><i class="fa fa-angle-right"></i>About Us 3</a></li>
+                                                                                    <li ><a href="page-about-4.html"><i class="fa fa-angle-right"></i>About Us 4</a></li>
+                                                                                    <li ><a href="page-about-me.html"><i class="fa fa-angle-right"></i>About Me</a></li>
+                                                                                    <li ><a href="page-team.html"><i class="fa fa-angle-right"></i>Our Team - Options 1</a></li>
+                                                                                    <li ><a href="page-team-2.html"><i class="fa fa-angle-right"></i>Our Team - Options 2</a></li>
+                                                                                    <li ><a href="page-team-3.html"><i class="fa fa-angle-right"></i>Our Team - Options 3</a></li>
+                                                                                    <li ><a href="page-coming-soon.html"><i class="fa fa-angle-right"></i>Coming Soon Page</a></li>
+                                                                                    <li ><a href="page-faq.html"><i class="fa fa-angle-right"></i>FAQ page</a></li>
+                                                                                </ul>
+                                                                            </div>
+                                                                            <div class="col-sm-4">
+                                                                                <div class="divider"></div>
+                                                                                <ul class="menu">
+                                                                                    <li ><a href="page-services.html"><i class="fa fa-angle-right"></i>Services 1</a></li>
+                                                                                    <li ><a href="page-services-2.html"><i class="fa fa-angle-right"></i>Services 2</a></li>
+                                                                                    <li ><a href="page-services-3.html"><i class="fa fa-angle-right"></i>Services 3</a></li>
+                                                                                    <li ><a href="page-contact.html"><i class="fa fa-angle-right"></i>Contact 1</a></li>
+                                                                                    <li ><a href="page-contact-2.html"><i class="fa fa-angle-right"></i>Contact 2</a></li>
+                                                                                    <li ><a href="page-contact-3.html"><i class="fa fa-angle-right"></i>Contact 3</a></li>
+                                                                                    <li ><a href="page-login.html"><i class="fa fa-angle-right"></i>Login 1</a></li>
+                                                                                    <li ><a href="page-login-2.html"><i class="fa fa-angle-right"></i>Login 2 - Fullsreen</a></li>
+                                                                                    <li ><a href="page-signup.html"><i class="fa fa-angle-right"></i>Sign Up 1</a></li>
+                                                                                    <li ><a href="page-signup-2.html"><i class="fa fa-angle-right"></i>Sign Up 2 - Fullsreen</a></li>
+                                                                                </ul>
+                                                                            </div>
+                                                                            <div class="col-sm-4">
+                                                                                <div class="divider"></div>
+                                                                                <ul class="menu">
+                                                                                    <li ><a href="page-404.html"><i class="fa fa-angle-right"></i>404 error</a></li>
+                                                                                    <li ><a href="page-404-2.html"><i class="fa fa-angle-right"></i>404 error - Parallax</a></li>
+                                                                                    <li ><a href="page-affix-sidebar.html"><i class="fa fa-angle-right"></i>Sidebar - Affix Menu</a></li>
+                                                                                    <li ><a href="page-left-sidebar.html"><i class="fa fa-angle-right"></i>Left Sidebar</a></li>
+                                                                                    <li ><a href="page-right-sidebar.html"><i class="fa fa-angle-right"></i>Right Sidebar</a></li>
+                                                                                    <li ><a href="page-two-sidebars.html"><i class="fa fa-angle-right"></i>Two Sidebars</a></li>
+                                                                                    <li ><a href="page-two-sidebars-left.html"><i class="fa fa-angle-right"></i>Two Sidebars Left</a></li>
+                                                                                    <li ><a href="page-two-sidebars-right.html"><i class="fa fa-angle-right"></i>Two Sidebars Right</a></li>
+                                                                                    <li ><a href="page-no-sidebars.html"><i class="fa fa-angle-right"></i>No Sidebars</a></li>
+                                                                                    <li ><a href="page-sitemap.html"><i class="fa fa-angle-right"></i>Sitemap</a></li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+<!--                                                                     <div class="col-lg-4 col-md-3 hidden-sm">
+                                                                        <h4 class="title">Premium HTML5 Template</h4>
+                                                                        <p class="mb-10">The Project is perfectly suitable for corporate, business and company webpages.</p>
+                                                                        <img src="images/section-image-3.png" alt="The Project">
+                                                                    </div> -->
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="dropdown ">
+                                                        <a href="index-shop.html" class="dropdown-toggle" data-toggle="dropdown">Shop</a>
+                                                        <ul class="dropdown-menu">
+                                                            <li ><a href="index-shop.html">Shop Home 1</a></li>
+                                                            <li ><a href="index-shop-2.html">Shop Home 2</a></li>
+                                                            <li ><a href="shop-listing-4col.html">Grid - 4 Columns</a></li>
+                                                            <li ><a href="shop-listing-3col.html">Grid - 3 Columns</a></li>
+                                                            <li ><a href="shop-listing-2col.html">Grid - 2 Columns</a></li>
+                                                            <li ><a href="shop-listing-sidebar.html">Grid - With Sidebar</a></li>
+                                                            <li ><a href="shop-listing-list.html">List</a></li>
+                                                            <li ><a href="shop-product.html">Product</a></li>
+                                                            <li ><a href="shop-cart.html">Shopping Cart</a></li>
+                                                            <li ><a href="shop-checkout.html">Checkout Page - Step 1</a></li>
+                                                            <li ><a href="shop-checkout-payment.html">Checkout Page - Step 2</a></li>
+                                                            <li ><a href="shop-checkout-review.html">Checkout Page - Step 3</a></li>
+                                                            <li ><a href="shop-invoice.html">Invoice</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="dropdown ">
+                                                        <a href="blog-large-image-right-sidebar.html" class="dropdown-toggle" data-toggle="dropdown">Blog</a>
+                                                        <ul class="dropdown-menu">
+                                                            <li ><a href="index-blog.html">Blog Home <span class="badge">v1.1</span></a></li>
+                                                            <li class="dropdown ">
+                                                                <a  class="dropdown-toggle" data-toggle="dropdown" href="#">Large Image</a>
+                                                                <ul class="dropdown-menu to-left">
+                                                                    <li ><a href="blog-large-image-right-sidebar.html">Right Sidebar</a></li>
+                                                                    <li ><a href="blog-large-image-left-sidebar.html">Left Sidebar</a></li>
+                                                                    <li ><a href="blog-large-image-no-sidebar.html">Without Sidebar</a></li>
+                                                                </ul>
+                                                            </li>
+                                                            <li class="dropdown ">
+                                                                <a  class="dropdown-toggle" data-toggle="dropdown" href="#">Medium Image</a>
+                                                                <ul class="dropdown-menu to-left">
+                                                                    <li ><a href="blog-medium-image-right-sidebar.html">Right Sidebar</a></li>
+                                                                    <li ><a href="blog-medium-image-left-sidebar.html">Left Sidebar</a></li>
+                                                                    <li ><a href="blog-medium-image-no-sidebar.html">Without Sidebar</a></li>
+                                                                </ul>
+                                                            </li>
+                                                            <li class="dropdown ">
+                                                                <a  class="dropdown-toggle" data-toggle="dropdown" href="#">Masonry</a>
+                                                                <ul class="dropdown-menu to-left">
+                                                                    <li ><a href="blog-masonry-right-sidebar.html">Right Sidebar</a></li>
+                                                                    <li ><a href="blog-masonry-left-sidebar.html">Left Sidebar</a></li>
+                                                                    <li ><a href="blog-masonry-no-sidebar.html">Without Sidebar</a></li>
+                                                                </ul>
+                                                            </li>
+                                                            <li ><a href="blog-timeline.html">Timeline</a></li>
+                                                            <li ><a href="blog-post.html">Blog Post</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                                <!-- main-menu end -->
+                                                
+                                                <!-- header buttons -->
+                                                <div class="header-dropdown-buttons">
+                                                    <a href="mailto:theproject@info.com" class="btn btn-sm hidden-xs btn-default">Contact Us <i class="fa fa-envelope-o pl-5"></i></a>
+                                                    <a href="mailto:theproject@info.com" class="btn btn-lg visible-xs btn-block btn-default">Contact Us <i class="fa fa-envelope-o pl-5"></i></a>
+                                                </div>
+                                                <!-- header buttons end-->
+                                                
+                                            </div>
+
+                                        </div>
+                                    </nav>
+                                    <!-- navbar end -->
+
+                                </div>
+                                <!-- main-navigation end -->
+                                </div>
+                                <!-- header-right end -->
+                    
+                            </div>
+                        </div>
+                    </div>
+                    
+                </header>
+                <!-- header end -->
             </div>
 
-            <div class="collapse navbar-collapse js-navbar-collapse">
-                <ul class="nav navbar-nav">
-                    {% show_menu 0 100 100 100 "menu.html" %}
-                </ul>
-            </div><!-- /.nav-collapse -->
-        </nav>
-    </div>
+
+
+
+
+
+
+
+        </div>
+
+
+
 
         <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel">
             {% placeholder carousel %}
@@ -50,7 +420,6 @@
                 <div class="col-md-3 sidebar-offcanvas" id="sidebar" role="navigation">
                     <div class="sidebar-nav"> <!-- nav nav-stacked"> -->
                         <ul class="nav">
-                            {% show_menu 1 2 100 100 "sidemenu.html" %}
                         </ul>
                     </div>
 
@@ -61,17 +430,45 @@
                 </div>
             </div>
         </div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>
-        <script src="{% static 'dist/js/menu.js' %}"></script>
-        <script src="{% static 'dist/css/carousel.css' %}"></script>
-        <script>
-        $(document).ready(function() {
-          $('[data-toggle=offcanvas]').click(function() {
-            $('.row-offcanvas').toggleClass('active');
-          });
-        });
-        </script>
+                <!-- JavaScript files placed at the end of the document so the pages load faster -->
+        <!-- ================================================== -->
+        <!-- Jquery and Bootstap core js files -->
+        <script type="text/javascript" src="{% static 'plugins/jquery.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+        <!-- Modernizr javascript -->
+        <script type="text/javascript" src="{% static 'plugins/modernizr.js' %}"></script>
+        <!-- jQuery Revolution Slider  -->
+        <script type="text/javascript" src="{% static 'plugins/rs-plugin/js/jquery.themepunch.tools.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'plugins/rs-plugin/js/jquery.themepunch.revolution.min.js' %}"></script>
+        <!-- Isotope javascript -->
+        <script type="text/javascript" src="{% static 'plugins/isotope/isotope.pkgd.min.js' %}"></script>
+        <!-- Magnific Popup javascript -->
+        <script type="text/javascript" src="{% static 'plugins/magnific-popup/jquery.magnific-popup.min.js' %}"></script>
+        <!-- Appear javascript -->
+        <script type="text/javascript" src="{% static 'plugins/waypoints/jquery.waypoints.min.js' %}"></script>
+        <!-- Count To javascript -->
+        <script type="text/javascript" src="{% static 'plugins/jquery.countTo.js' %}"></script>
+        <!-- Parallax javascript -->
+        <script src="{% static 'plugins/jquery.parallax-1.1.3.js' %}"></script>
+        <!-- Contact form -->
+        <script src="{% static 'plugins/jquery.validate.js' %}"></script>
+        <!-- Google Maps javascript -->
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false&amp;signed_in=true"></script>
+        <script type="text/javascript" src="{% static 'js/google.map.config.js' %}"></script>
+        <!-- Background Video -->
+        <script src="{% static 'plugins/vide/jquery.vide.js' %}"></script>
+        <!-- Owl carousel javascript -->
+        <script type="text/javascript" src="{% static 'plugins/owl-carousel/owl.carousel.js' %}"></script>
+        <!-- Pace javascript -->
+        <script type="text/javascript" src="{% static 'plugins/pace/pace.min.js' %}"></script>
+        <!-- SmoothScroll javascript -->
+        <script type="text/javascript" src="{% static 'plugins/jquery.browser.js' %}"></script>
+        <script type="text/javascript" src="{% static 'plugins/SmoothScroll.js' %}"></script>
+        <!-- Initialization of Plugins -->
+        <script type="text/javascript" src="{% static 'js/template.js' %}"></script>
+        <!-- Custom Scripts -->
+        <script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
+
         {% render_block "js" %}
     </body>
 </html>
