@@ -1,6 +1,7 @@
 import os
 gettext = lambda s: s
 DATA_DIR = os.path.dirname(os.path.dirname(__file__))
+
 """
 Django settings for mycms project.
 
@@ -151,7 +152,9 @@ INSTALLED_APPS = [
     'aldryn_bootstrap3',
     'mycms',
     'columns',
+    'slideshow_picture',
 #    'classes',
+#    'slides',
 #    'records',
 #    'information',
 ]
@@ -193,6 +196,9 @@ CMS_PLACEHOLDER_CONF = {
     },
     'menucarousel': {
         'plugins': ['Bootstrap3CarouselCMSPlugin']
+    },
+    'logo': {
+        'plugins': ['Bootstrap3ImageCMSPlugin']
     }
 }
 

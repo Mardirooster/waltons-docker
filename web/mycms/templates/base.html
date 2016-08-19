@@ -1,6 +1,10 @@
 {% load cms_tags staticfiles sekizai_tags menu_tags %}
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+    <!--<![endif]-->
+
     <head>
         <meta charset="utf-8">
         <title>{% block title %}Default Home Page{% endblock title %}</title>
@@ -11,7 +15,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <!-- Favicon -->
-        <link rel="shortcut icon" href="images/favicon.ico">
+        <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
 
         <!-- Web Fonts -->
         <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
@@ -40,24 +44,30 @@
         <link href="{% static 'css/style.css' %}" rel="stylesheet" >
         <!-- Color Scheme (In order to change the color scheme, replace the blue.css with the color scheme that you prefer)-->
         <link href="{% static 'css/skins/cool_green.css' %}" rel="stylesheet">
+        
 
-        <!-- Loading Flat UI -->
-<!--         <link href="{% static 'dist/css/flat-ui.css' %}" rel="stylesheet">
- --><!--         <link href="{% static 'docs/assets/css/demo.css' %}" rel="stylesheet">
- -->        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+        <!-- Custom css --> 
+        <link href="{% static 'css/custom.css' %}" rel="stylesheet">
+
         {% render_block "css" %}
+
     </head>
+
+    <!-- body classes:  -->
+    <!-- "boxed": boxed layout mode e.g. <body class="boxed"> -->
+    <!-- "pattern-1 ... pattern-9": background patterns for boxed layout mode e.g. <body class="boxed pattern-1"> -->
+    <!-- "transparent-header": makes the header transparent and pulls the banner to top -->
+    <!-- "gradient-background-header": applies gradient background to header -->
+    <!-- "page-loader-1 ... page-loader-6": add a page loader to the page (more info @components-page-loaders.html) -->
     <body class="no-trans front-page   page-loader-1">
+
         {% cms_toolbar %}
+
 
         <!-- scrollToTop -->
         <!-- ================ -->
         <div class="scrollToTop circle"><i class="icon-up-open-big"></i></div>
-
-
-        <!-- page wrapper start -->
-        <!-- ================ -->
-        <div class="page-wrapper">
+        
         <!-- page wrapper start -->
         <!-- ================ -->
         <div class="page-wrapper">
@@ -79,26 +89,17 @@
                                 <div class="header-top-first clearfix">
                                     <ul class="social-links circle small clearfix hidden-xs">
                                         <li class="twitter"><a target="_blank" href="https://twitter.com/newschool_ie"><i class="fa fa-twitter"></i></a></li>
-                                        <li class="skype"><a target="_blank" href="http://www.skype.com"><i class="fa fa-skype"></i></a></li>
-                                        <li class="linkedin"><a target="_blank" href="http://www.linkedin.com"><i class="fa fa-linkedin"></i></a></li>
-                                        <li class="googleplus"><a target="_blank" href="http://plus.google.com"><i class="fa fa-google-plus"></i></a></li>
                                         <li class="youtube"><a target="_blank" href="https://www.youtube.com/channel/UCFziV-uH5Up8y7IBMIhFvCw"><i class="fa fa-youtube-play"></i></a></li>
                                         <li class="flickr"><a target="_blank" href="http://www.flickr.com"><i class="fa fa-flickr"></i></a></li>
                                         <li class="facebook"><a target="_blank" href="https://www.facebook.com/newschool.ie"><i class="fa fa-facebook"></i></a></li>
-                                        <li class="pinterest"><a target="_blank" href="http://www.pinterest.com"><i class="fa fa-pinterest"></i></a></li>
                                     </ul>
                                     <div class="social-links hidden-lg hidden-md hidden-sm circle small">
                                         <div class="btn-group dropdown">
                                             <button type="button" class="btn dropdown-toggle" data-toggle="dropdown"><i class="fa fa-share-alt"></i></button>
                                             <ul class="dropdown-menu dropdown-animation">
                                                 <li class="twitter"><a target="_blank" href="https://twitter.com/newschool_ie"><i class="fa fa-twitter"></i></a></li>
-                                                <li class="skype"><a target="_blank" href="http://www.skype.com"><i class="fa fa-skype"></i></a></li>
-                                                <li class="linkedin"><a target="_blank" href="http://www.linkedin.com"><i class="fa fa-linkedin"></i></a></li>
-                                                <li class="googleplus"><a target="_blank" href="http://plus.google.com"><i class="fa fa-google-plus"></i></a></li>
                                                 <li class="youtube"><a target="_blank" href="https://www.youtube.com/channel/UCFziV-uH5Up8y7IBMIhFvCw"><i class="fa fa-youtube-play"></i></a></li>
-                                                <li class="flickr"><a target="_blank" href="http://www.flickr.com"><i class="fa fa-flickr"></i></a></li>
                                                 <li class="facebook"><a target="_blank" href="https://www.facebook.com/newschool.ie"><i class="fa fa-facebook"></i></a></li>
-                                                <li class="pinterest"><a target="_blank" href="http://www.pinterest.com"><i class="fa fa-pinterest"></i></a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -112,12 +113,10 @@
                                 <div id="header-top-second"  class="clearfix text-right">
                                     <nav>
                                         <ul class="list-inline">
-                                            <li><a class="link-light " href="#"><i class="fa fa-users pr-5"></i>Alumni</a></li>
                                             <li><a class="link-light " href="#"><i class="fa fa-user pr-5"></i>Staff/Faculty</a></li>
                                             <li><a class="link-light " href="#"><i class="fa fa-child pr-5"></i>Students</a></li>
-                                            <li class="hidden-sm hidden-xs"><a class="link-light" href="#"><i class="fa fa-flask pr-5"></i>Researches</a></li>
                                             <li class="hidden-sm hidden-xs"><a class="link-light" href="#"><i class="fa fa-info-circle pr-5"></i>Information</a></li>
-                                            <li class="hidden-sm hidden-xs"><strong class="pl-5">Call Us:</strong> +12 123 123 123</li>
+                                            <li class="hidden-sm hidden-xs"><strong class="pl-5">Call Us:</strong> +353 (0)1 478 1884</li>
                                         </ul>
                                     </nav>
                                 </div>
@@ -146,7 +145,7 @@
 
                                     <!-- logo -->
                                     <div id="logo" class="logo">
-                                        <a href="#"><img id="logo_img" src="{% static 'images/logo_cool_green.png' %}" alt="Waltons"></a>
+                                        <a href="index.html">{% static_placeholder 'logo' %}</a>
                                     </div>
 
                                     
@@ -189,191 +188,14 @@
                                             <div class="collapse navbar-collapse" id="navbar-collapse-1">
                                                 <!-- main-menu -->
                                                 <ul class="nav navbar-nav ">
-
-
-                                                    {% show_menu 0 100 100 100 "menu.html" %}
-
-                                                    <!-- mega-menu start -->
-                                                    <li class="dropdown active mega-menu">
-                                                        <a href="index.html" class="dropdown-toggle" data-toggle="dropdown">Home</a>
-                                                        <ul class="dropdown-menu">
-                                                            <li>
-                                                                <div class="row">
-                                                                    <div class="col-md-12">
-                                                                        <h4 class="title"><i class="fa fa-laptop pr-10"></i> Demos</h4>
-                                                                        <div class="row">
-                                                                            <div class="col-sm-6 col-md-3">
-                                                                                <div class="divider"></div>
-                                                                                <ul class="menu">
-                                                                                    <li ><a href="index.html"><i class="icon-home pr-10"></i>Home Default</a></li>
-                                                                                    <li ><a href="index-corporate-1.html"><i class="icon-suitcase pr-10"></i>Corporate 1</a></li>
-                                                                                    <li ><a href="index-corporate-2.html"><i class="icon-suitcase pr-10"></i>Corporate 2</a></li>
-                                                                                    <li ><a href="index-corporate-3.html"><i class="icon-suitcase pr-10"></i>Corporate 3</a></li>
-                                                                                    <li ><a href="index-corporate-4.html"><i class="icon-home pr-10"></i>Corporate 4 <span class="badge">NEW</span></a></li>
-                                                                                    <li ><a href="index-shop.html"><i class="icon-basket-1 pr-10"></i>Commerce 1</a></li>
-                                                                                </ul>
-                                                                            </div>
-                                                                            <div class="col-sm-6 col-md-3">
-                                                                                <div class="divider"></div>
-                                                                                <ul class="menu">
-                                                                                    <li ><a href="index-shop-2.html"><i class="icon-basket-1 pr-10"></i>Commerce 2</a></li>
-                                                                                    <li ><a href="index-portfolio.html"><i class="icon-briefcase pr-10"></i>Portfolio/Agency</a></li>
-                                                                                    <li ><a href="index-medical.html"><i class="fa fa-ambulance pr-10"></i>Medical</a></li>
-                                                                                    <li ><a href="index-restaurant.html"><i class="fa fa-cutlery pr-10"></i>Restaurant</a></li>
-                                                                                    <li ><a href="index-wedding.html"><i class="icon-heart pr-10"></i>Wedding</a></li>
-                                                                                    <li ><a href="index-landing.html"><i class="fa fa-star pr-10"></i>Landing Page</a></li>
-                                                                                </ul>
-                                                                            </div>
-                                                                            <div class="col-sm-6 col-md-3">
-                                                                                <div class="divider"></div>
-                                                                                <ul class="menu">
-                                                                                    <li ><a href="page-coming-soon.html"><i class="fa fa-clock-o pr-10"></i>Coming Soon</a></li>
-                                                                                    <li ><a href="index-one-page.html"><i class="icon-home pr-10"></i>One Page Version</a></li>
-                                                                                    <li ><a href="index-construction.html"><i class="fa fa-building pr-10"></i>Construction <span class="badge">v1.1</span></a></li>
-                                                                                    <li class="active"><a href="index-education.html"><i class="fa fa-graduation-cap pr-10"></i>Education <span class="badge">v1.1</span></a></li>
-                                                                                    <li ><a href="index-hotel.html"><i class="fa fa-bed pr-10"></i>Hotel <span class="badge">v1.1</span></a></li>
-                                                                                    <li ><a href="index-blog.html"><i class="fa fa-pencil pr-10"></i>Blog <span class="badge">v1.1</span></a></li>
-                                                                                </ul>
-                                                                            </div>
-                                                                            <div class="col-sm-6 col-md-3">
-                                                                                <div class="divider"></div>
-                                                                                <ul class="menu">
-                                                                                    <li ><a href="index-beauty.html"><i class="fa fa-magic pr-10"></i>Beauty Center <span class="badge">v1.1</span></a></li>
-                                                                                    <li ><a href="index-gym.html"><i class="fa fa-heartbeat pr-10"></i>Gym <span class="badge">NEW</span></a></li>
-                                                                                    <li ><a href="index-resume.html"><i class="fa fa-user pr-10"></i>Resume <span class="badge">NEW</span></a></li>
-                                                                                    <li ><a href="index-agency.html"><i class="fa fa-users pr-10"></i>Agency <span class="badge">NEW</span></a></li>
-                                                                                    <li ><a href="index-logistics.html"><i class="fa fa-truck pr-10"></i>Logistics <span class="badge">NEW</span></a></li>
-                                                                                </ul>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                    <!-- mega-menu end -->
-                                                    <!-- mega-menu start -->
-                                                    <li class="dropdown  mega-menu">
-                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages</a>
-                                                        <ul class="dropdown-menu">
-                                                            <li>
-                                                                <div class="row">
-                                                                    <div class="col-lg-8 col-md-9">
-                                                                        <h4 class="title">Pages</h4>
-                                                                        <div class="row">
-                                                                            <div class="col-sm-4">
-                                                                                <div class="divider"></div>
-                                                                                <ul class="menu">
-                                                                                    <li ><a href="page-about.html"><i class="fa fa-angle-right"></i>About Us 1</a></li>
-                                                                                    <li ><a href="page-about-2.html"><i class="fa fa-angle-right"></i>About Us 2</a></li>
-                                                                                    <li ><a href="page-about-3.html"><i class="fa fa-angle-right"></i>About Us 3</a></li>
-                                                                                    <li ><a href="page-about-4.html"><i class="fa fa-angle-right"></i>About Us 4</a></li>
-                                                                                    <li ><a href="page-about-me.html"><i class="fa fa-angle-right"></i>About Me</a></li>
-                                                                                    <li ><a href="page-team.html"><i class="fa fa-angle-right"></i>Our Team - Options 1</a></li>
-                                                                                    <li ><a href="page-team-2.html"><i class="fa fa-angle-right"></i>Our Team - Options 2</a></li>
-                                                                                    <li ><a href="page-team-3.html"><i class="fa fa-angle-right"></i>Our Team - Options 3</a></li>
-                                                                                    <li ><a href="page-coming-soon.html"><i class="fa fa-angle-right"></i>Coming Soon Page</a></li>
-                                                                                    <li ><a href="page-faq.html"><i class="fa fa-angle-right"></i>FAQ page</a></li>
-                                                                                </ul>
-                                                                            </div>
-                                                                            <div class="col-sm-4">
-                                                                                <div class="divider"></div>
-                                                                                <ul class="menu">
-                                                                                    <li ><a href="page-services.html"><i class="fa fa-angle-right"></i>Services 1</a></li>
-                                                                                    <li ><a href="page-services-2.html"><i class="fa fa-angle-right"></i>Services 2</a></li>
-                                                                                    <li ><a href="page-services-3.html"><i class="fa fa-angle-right"></i>Services 3</a></li>
-                                                                                    <li ><a href="page-contact.html"><i class="fa fa-angle-right"></i>Contact 1</a></li>
-                                                                                    <li ><a href="page-contact-2.html"><i class="fa fa-angle-right"></i>Contact 2</a></li>
-                                                                                    <li ><a href="page-contact-3.html"><i class="fa fa-angle-right"></i>Contact 3</a></li>
-                                                                                    <li ><a href="page-login.html"><i class="fa fa-angle-right"></i>Login 1</a></li>
-                                                                                    <li ><a href="page-login-2.html"><i class="fa fa-angle-right"></i>Login 2 - Fullsreen</a></li>
-                                                                                    <li ><a href="page-signup.html"><i class="fa fa-angle-right"></i>Sign Up 1</a></li>
-                                                                                    <li ><a href="page-signup-2.html"><i class="fa fa-angle-right"></i>Sign Up 2 - Fullsreen</a></li>
-                                                                                </ul>
-                                                                            </div>
-                                                                            <div class="col-sm-4">
-                                                                                <div class="divider"></div>
-                                                                                <ul class="menu">
-                                                                                    <li ><a href="page-404.html"><i class="fa fa-angle-right"></i>404 error</a></li>
-                                                                                    <li ><a href="page-404-2.html"><i class="fa fa-angle-right"></i>404 error - Parallax</a></li>
-                                                                                    <li ><a href="page-affix-sidebar.html"><i class="fa fa-angle-right"></i>Sidebar - Affix Menu</a></li>
-                                                                                    <li ><a href="page-left-sidebar.html"><i class="fa fa-angle-right"></i>Left Sidebar</a></li>
-                                                                                    <li ><a href="page-right-sidebar.html"><i class="fa fa-angle-right"></i>Right Sidebar</a></li>
-                                                                                    <li ><a href="page-two-sidebars.html"><i class="fa fa-angle-right"></i>Two Sidebars</a></li>
-                                                                                    <li ><a href="page-two-sidebars-left.html"><i class="fa fa-angle-right"></i>Two Sidebars Left</a></li>
-                                                                                    <li ><a href="page-two-sidebars-right.html"><i class="fa fa-angle-right"></i>Two Sidebars Right</a></li>
-                                                                                    <li ><a href="page-no-sidebars.html"><i class="fa fa-angle-right"></i>No Sidebars</a></li>
-                                                                                    <li ><a href="page-sitemap.html"><i class="fa fa-angle-right"></i>Sitemap</a></li>
-                                                                                </ul>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-<!--                                                                     <div class="col-lg-4 col-md-3 hidden-sm">
-                                                                        <h4 class="title">Premium HTML5 Template</h4>
-                                                                        <p class="mb-10">The Project is perfectly suitable for corporate, business and company webpages.</p>
-                                                                        <img src="images/section-image-3.png" alt="The Project">
-                                                                    </div> -->
-                                                                </div>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="dropdown ">
-                                                        <a href="index-shop.html" class="dropdown-toggle" data-toggle="dropdown">Shop</a>
-                                                        <ul class="dropdown-menu">
-                                                            <li ><a href="index-shop.html">Shop Home 1</a></li>
-                                                            <li ><a href="index-shop-2.html">Shop Home 2</a></li>
-                                                            <li ><a href="shop-listing-4col.html">Grid - 4 Columns</a></li>
-                                                            <li ><a href="shop-listing-3col.html">Grid - 3 Columns</a></li>
-                                                            <li ><a href="shop-listing-2col.html">Grid - 2 Columns</a></li>
-                                                            <li ><a href="shop-listing-sidebar.html">Grid - With Sidebar</a></li>
-                                                            <li ><a href="shop-listing-list.html">List</a></li>
-                                                            <li ><a href="shop-product.html">Product</a></li>
-                                                            <li ><a href="shop-cart.html">Shopping Cart</a></li>
-                                                            <li ><a href="shop-checkout.html">Checkout Page - Step 1</a></li>
-                                                            <li ><a href="shop-checkout-payment.html">Checkout Page - Step 2</a></li>
-                                                            <li ><a href="shop-checkout-review.html">Checkout Page - Step 3</a></li>
-                                                            <li ><a href="shop-invoice.html">Invoice</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="dropdown ">
-                                                        <a href="blog-large-image-right-sidebar.html" class="dropdown-toggle" data-toggle="dropdown">Blog</a>
-                                                        <ul class="dropdown-menu">
-                                                            <li ><a href="index-blog.html">Blog Home <span class="badge">v1.1</span></a></li>
-                                                            <li class="dropdown ">
-                                                                <a  class="dropdown-toggle" data-toggle="dropdown" href="#">Large Image</a>
-                                                                <ul class="dropdown-menu to-left">
-                                                                    <li ><a href="blog-large-image-right-sidebar.html">Right Sidebar</a></li>
-                                                                    <li ><a href="blog-large-image-left-sidebar.html">Left Sidebar</a></li>
-                                                                    <li ><a href="blog-large-image-no-sidebar.html">Without Sidebar</a></li>
-                                                                </ul>
-                                                            </li>
-                                                            <li class="dropdown ">
-                                                                <a  class="dropdown-toggle" data-toggle="dropdown" href="#">Medium Image</a>
-                                                                <ul class="dropdown-menu to-left">
-                                                                    <li ><a href="blog-medium-image-right-sidebar.html">Right Sidebar</a></li>
-                                                                    <li ><a href="blog-medium-image-left-sidebar.html">Left Sidebar</a></li>
-                                                                    <li ><a href="blog-medium-image-no-sidebar.html">Without Sidebar</a></li>
-                                                                </ul>
-                                                            </li>
-                                                            <li class="dropdown ">
-                                                                <a  class="dropdown-toggle" data-toggle="dropdown" href="#">Masonry</a>
-                                                                <ul class="dropdown-menu to-left">
-                                                                    <li ><a href="blog-masonry-right-sidebar.html">Right Sidebar</a></li>
-                                                                    <li ><a href="blog-masonry-left-sidebar.html">Left Sidebar</a></li>
-                                                                    <li ><a href="blog-masonry-no-sidebar.html">Without Sidebar</a></li>
-                                                                </ul>
-                                                            </li>
-                                                            <li ><a href="blog-timeline.html">Timeline</a></li>
-                                                            <li ><a href="blog-post.html">Blog Post</a></li>
-                                                        </ul>
-                                                    </li>
+                                                    {% show_menu 1 100 100 100 "menu.html" %}
                                                 </ul>
                                                 <!-- main-menu end -->
                                                 
                                                 <!-- header buttons -->
                                                 <div class="header-dropdown-buttons">
-                                                    <a href="mailto:theproject@info.com" class="btn btn-sm hidden-xs btn-default">Contact Us <i class="fa fa-envelope-o pl-5"></i></a>
-                                                    <a href="mailto:theproject@info.com" class="btn btn-lg visible-xs btn-block btn-default">Contact Us <i class="fa fa-envelope-o pl-5"></i></a>
+                                                    <a href="mailto:info@newschool.ie" class="btn btn-sm hidden-xs btn-default">Contact Us <i class="fa fa-envelope-o pl-5"></i></a>
+                                                    <a href="mailto:info@newschool.ie" class="btn btn-lg visible-xs btn-block btn-default">Contact Us <i class="fa fa-envelope-o pl-5"></i></a>
                                                 </div>
                                                 <!-- header buttons end-->
                                                 
@@ -395,41 +217,440 @@
                 </header>
                 <!-- header end -->
             </div>
-
-
-
-
-
-
-
-
-        </div>
-
-
-
-
-        <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel">
-            {% placeholder carousel %}
-    <!-- Carousel nav -->
-        </div>
-        <div class="container-fluid">
-            
-
-
-            <div class="row row-offcanvas row-offcanvas-left">
-                <div class="col-md-3 sidebar-offcanvas" id="sidebar" role="navigation">
-                    <div class="sidebar-nav"> <!-- nav nav-stacked"> -->
-                        <ul class="nav">
-                        </ul>
+            <!-- header-container end -->
+        
+            <!-- banner start -->
+            <!-- ================ -->
+            <div class="banner clearfix">
+                            <!-- banner start -->
+            <!-- ================ -->
+            <div class="banner clearfix">
+                <!-- slideshow start -->
+                <!-- ================ -->
+                <div class="slideshow">
+                    
+                    <!-- slider revolution start -->
+                    <!-- ================ -->
+                    <div class="slider-banner-container">
+                        <div class="slider-banner-fullwidth">
+                            <ul class="slides">
+                                {% placeholder "slides" %}
+                                <!-- slide 2 end -->
+                            </ul>
+                            <div class="tp-bannertimer"></div>
+                        </div>
                     </div>
-
+                    <!-- slider revolution end -->
 
                 </div>
-                <div class="col-md-9" id="rightCol">
-                    {% block content %}{% endblock content %}
+                <!-- slideshow end -->
+            </div>
+            <!-- banner end -->
+            </div>
+            <!-- banner end -->
+
+            <div id="page-start"></div>
+
+            <!-- section start -->
+            <!-- ================ -->
+            <section class="section clearfix">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h3>Latest <span class="text-default">News</span></h3>
+                            <div class="separator-2"></div>
+                            <div class="block">
+                                <div class="media margin-clear">
+                                    <div class="media-left">
+                                        <div class="overlay-container">
+                                            <img class="media-object" src="images/medical-blog-thumb-1.jpg" alt="blog-thumb">
+                                            <a href="blog-post.html" class="overlay-link small"><i class="fa fa-link"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+                                        <h5 class="media-heading"><a href="blog-post.html">Lorem ipsum dolor sit amet</a></h5>
+                                        <p class="small"><i class="fa fa-calendar pr-10"></i>Mar 23, 2015</p>
+                                        <p class="margin-clear small">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt corrupti, cum exercitationem.</p>
+                                        <a href="#">Read More</a>
+                                    </div>
+                                    <hr>
+                                </div>
+                                <div class="media margin-clear">
+                                    <div class="media-left">
+                                        <div class="overlay-container">
+                                            <img class="media-object" src="images/medical-blog-thumb-2.jpg" alt="blog-thumb">
+                                            <a href="blog-post.html" class="overlay-link small"><i class="fa fa-link"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+                                        <h5 class="media-heading"><a href="blog-post.html">Perspiciatis laborum necess</a></h5>
+                                        <p class="small"><i class="fa fa-calendar pr-10"></i>Mar 22, 2015</p>
+                                        <p class="margin-clear small">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt corrupti, cum exercitationem.</p>
+                                        <a href="#">Read More</a>
+                                    </div>
+                                    <hr>
+                                </div>
+                                <div class="media margin-clear">
+                                    <div class="media-left">
+                                        <div class="overlay-container">
+                                            <img class="media-object" src="images/medical-blog-thumb-3.jpg" alt="blog-thumb">
+                                            <a href="blog-post.html" class="overlay-link small"><i class="fa fa-link"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+                                        <h5 class="media-heading"><a href="blog-post.html">Cum eligendi nisi rerum porro</a></h5>
+                                        <p class="small"><i class="fa fa-calendar pr-10"></i>Mar 21, 2015</p>
+                                        <p class="margin-clear small">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt corrupti, cum exercitationem.</p>
+                                        <a href="#">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <h3><span class="text-default">Events</span></h3>
+                            <div class="separator-2"></div>
+                            <div class="small"><i class="fa fa-calendar pr-10"></i>Oct 23, 2015 <i class="fa fa-clock-o pl-10 pr-10"></i>10:25 am</div>
+                            <h5><a href="blog-post.html">Lorem ipsum dolor sit amet</a></h5>
+                            <hr>
+                            <div class="small"><i class="fa fa-calendar pr-10"></i>Oct 23, 2015 <i class="fa fa-clock-o pl-10 pr-10"></i>9:55 am</div>
+                            <h5><a href="blog-post.html">Consectetur adipisicing elit</a></h5>
+                            <hr>
+                            <div class="small"><i class="fa fa-calendar pr-10"></i>Oct 23, 2015 <i class="fa fa-clock-o pl-10 pr-10"></i>11:05 am</div>
+                            <h5><a href="blog-post.html">Dignissimos, sapiente enim</a></h5>
+                            <hr>
+                            <div class="small"><i class="fa fa-calendar pr-10"></i>Oct 23, 2015 <i class="fa fa-clock-o pl-10 pr-10"></i>07:45 pm</div>
+                            <h5><a href="blog-post.html">Architecto dignissimos labore</a></h5>
+                            <hr>
+                            <a href="#" class="btn btn-default"><i class="fa fa-calendar pr-10"></i> See More Events</a>
+                        </div>
+                        <div class="col-md-3">
+                            <h3>Top <span class="text-default">Stories</span></h3>
+                            <div class="separator-2"></div>
+                            <div class="owl-carousel content-slider-with-large-controls-autoplay dark-controls light-gray-bg buttons-hide">                         
+                                <div class="image-box style-2">
+                                    <div class="overlay-container overlay-visible">
+                                        <img src="images/education-1.jpg" alt="">
+                                        <a href="#" class="overlay-link"><i class="fa fa-link"></i></a>
+                                        <div class="overlay-bottom">
+                                            <div class="text">
+                                                <p class="lead margin-clear text-left mobile-visible">Graduation</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="body padding-horizontal-clear">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipis elit. Aliquam atque ipsam nihil dood truck quinoa.</p>
+                                        <a class="link-dark" href="page-services.html">Read More<i class="pl-5 fa fa-angle-double-right"></i></a>
+                                    </div>
+                                </div>
+                                <div class="image-box style-2">
+                                    <div class="overlay-container overlay-visible">
+                                        <img src="images/education-2.jpg" alt="">
+                                        <a href="#" class="overlay-link"><i class="fa fa-link"></i></a>
+                                        <div class="overlay-bottom">
+                                            <div class="text">
+                                                <p class="lead margin-clear text-left mobile-visible">A success story</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="body padding-horizontal-clear">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipis elit. Aliquam atque ipsam nihil dood truck quinoa.</p>
+                                        <a class="link-dark" href="page-services.html">Read More<i class="pl-5 fa fa-angle-double-right"></i></a>
+                                    </div>
+                                </div>
+                                <div class="image-box style-2">
+                                    <div class="overlay-container overlay-visible">
+                                        <img src="images/education-3.jpg" alt="">
+                                        <a href="#" class="overlay-link"><i class="fa fa-link"></i></a>
+                                        <div class="overlay-bottom">
+                                            <div class="text">
+                                                <p class="lead margin-clear text-left mobile-visible">Lorem Ipsum sit amt</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="body padding-horizontal-clear">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipis elit. Aliquam atque ipsam nihil dood truck quinoa.</p>
+                                        <a class="link-dark" href="page-services.html">Read More<i class="pl-5 fa fa-angle-double-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- section end -->
+
+            <!-- section start -->
+            <!-- ================ -->
+            <section class="section pv-40 light-gray-bg clearfix">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2">
+                            <h3 class="title text-center">Studying at <span class="text-default">College</span></h3>
+                            <div class="separator"></div>
+                            <p class="lead text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo dignissimos, adipisci ipsa aut.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-4 col-lg-2">
+                            <div class="image-box shadow text-center mb-20">
+                                <div class="overlay-container overlay-visible">
+                                    <img src="images/education-4.jpg" alt="">
+                                    <a href="#" class="overlay-link"><i class="fa fa-link"></i></a>
+                                    <div class="overlay-bottom">
+                                        <div class="text">
+                                            <p class="lead margin-clear mobile-visible">Admissions</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-2">
+                            <div class="image-box shadow text-center mb-20">
+                                <div class="overlay-container overlay-visible">
+                                    <img src="images/education-5.jpg" alt="">
+                                    <a href="#" class="overlay-link"><i class="fa fa-link"></i></a>
+                                    <div class="overlay-bottom">
+                                        <div class="text">
+                                            <p class="lead margin-clear mobile-visible">Education</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-2">
+                            <div class="image-box shadow text-center mb-20">
+                                <div class="overlay-container overlay-visible">
+                                    <img src="images/education-6.jpg" alt="">
+                                    <a href="#" class="overlay-link"><i class="fa fa-link"></i></a>
+                                    <div class="overlay-bottom">
+                                        <div class="text">
+                                            <p class="lead margin-clear mobile-visible">Departments</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-2">
+                            <div class="image-box shadow text-center mb-20">
+                                <div class="overlay-container overlay-visible">
+                                    <img src="images/education-7.jpg" alt="">
+                                    <a href="#" class="overlay-link"><i class="fa fa-link"></i></a>
+                                    <div class="overlay-bottom">
+                                        <div class="text">
+                                            <p class="lead margin-clear mobile-visible">Library</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-2">
+                            <div class="image-box shadow text-center mb-20">
+                                <div class="overlay-container overlay-visible">
+                                    <img src="images/education-8.jpg" alt="">
+                                    <a href="#" class="overlay-link"><i class="fa fa-link"></i></a>
+                                    <div class="overlay-bottom">
+                                        <div class="text">
+                                            <p class="lead margin-clear mobile-visible">Staff/Faculty</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-2">
+                            <div class="image-box shadow text-center mb-20">
+                                <div class="overlay-container overlay-visible">
+                                    <img src="images/education-9.jpg" alt="">
+                                    <a href="#" class="overlay-link"><i class="fa fa-link"></i></a>
+                                    <div class="overlay-bottom">
+                                        <div class="text">
+                                            <p class="lead margin-clear mobile-visible">Alumni</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- section end -->
+
+            <!-- footer top start -->
+            <!-- ================ -->
+            <div class="pv-40 footer-top">
+                <div class="container">
+                    <h3 class="logo-font">The <span class="text-default">College</span></h3>
+                    <div class="separator-2"></div>
+                    <div class="row mb-20">
+                        <div class="col-lg-6">
+                            <img src="images/education-about.jpg" alt="">
+                        </div>
+                        <div class="col-lg-6">
+                            <h3>Since <span class="text-default">1910</span></h3>
+                            <p><em>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente unde id porro saepe enim ipsam, architecto dicta iste adipisci eligendi aliquid cupiditate molestias corrupti, suscipit corporis exercitationem quis alias dolor.</em></p>
+                            <p><em>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo culpa cupiditate iure deserunt eveniet reprehenderit placeat, magnam voluptas magni maiores numquam cum veritatis enim quam deleniti repudiandae perferendis! Dolores, illo.</em></p>
+                            <h3>Connect with <span class="text-default">us</span></h3>
+                            <ul class="social-links default circle animated-effect-1">
+                                <li class="facebook"><a target="_blank" href="http://www.facebook.com"><i class="fa fa-facebook"></i></a></li>
+                                <li class="twitter"><a target="_blank" href="http://www.twitter.com"><i class="fa fa-twitter"></i></a></li>
+                                <li class="googleplus"><a target="_blank" href="http://plus.google.com"><i class="fa fa-google-plus"></i></a></li>
+                                <li class="skype"><a target="_blank" href="http://www.skype.com"><i class="fa fa-skype"></i></a></li>
+                                <li class="instagram"><a target="_blank" href="http://www.instagram.com"><i class="fa fa-instagram"></i></a></li>
+                                <li class="linkedin"><a target="_blank" href="http://www.linkedin.com"><i class="fa fa-linkedin"></i></a></li>
+                                <li class="pinterest"><a target="_blank" href="http://www.pinterest.com"><i class="fa fa-pinterest"></i></a></li>
+                                <li class="flickr"><a target="_blank" href="http://www.flickr.com"><i class="fa fa-flickr"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="call-to-action pv-40 text-center">
+                                <div class="row">
+                                    <div class="col-sm-8 col-sm-offset-2">
+                                        <h2 class="title">Get the latest College news.</h2>
+                                        <div class="separator mb-20"></div>
+                                        <form class="form-inline margin-clear">
+                                            <div class="form-group has-feedback">
+                                                <label class="sr-only" for="subscribe3">Email address</label>
+                                                <input type="email" class="form-control form-control-lg" id="subscribe3" placeholder="Enter email" name="subscribe3" required="">
+                                                <i class="fa fa-envelope form-control-feedback"></i>
+                                            </div>
+                                            <button type="submit" class="btn btn-lg btn-default btn-animated margin-clear">Subscribe <i class="fa fa-send"></i></button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <!-- footer top end -->
+            <!-- footer start (Add "dark" class to #footer in order to enable dark footer) -->
+            <!-- ================ -->
+            <footer id="footer" class="clearfix ">
+
+                <!-- .footer start -->
+                <!-- ================ -->
+                <div class="footer">
+                    <div class="container">
+                        <div class="footer-inner">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="footer-content">
+                                        <h2 class="title logo-font text-default">The College</h2>
+                                        <div class="separator-2"></div>
+                                        <nav class="mb-20">
+                                            <ul class="nav nav-pills nav-stacked list-style-icons">
+                                                <li><a href="components-social-icons.html"><i class="fa fa-chevron-circle-right"></i> Lorem ipsum dolor sit</a></li>
+                                                <li><a href="components-buttons.html"><i class="fa fa-chevron-circle-right"></i>  Consectetur adipisicing elit</a></li>
+                                                <li><a href="components-buttons.html"><i class="fa fa-chevron-circle-right"></i> Rerum iure temporibus</a></li>
+                                            </ul>
+                                        </nav>
+                                        <h4 class="title text-default"><i class="fa fa-wechat pr-10"></i> Consectetur adipisicing</h4>
+                                        <nav class="mb-20">
+                                            <ul class="nav nav-pills nav-stacked list-style-icons">
+                                                <li><a href="components-forms.html"><i class="fa fa-chevron-circle-right"></i> Repudiandae porro doloribus</a></li>
+                                                <li><a href="components-tabs-and-pills.html"><i class="fa fa-chevron-circle-right"></i> Amet culpa</a></li>
+                                                <li><a target="_blank" href="http://htmlcoder.me/support"><i class="fa fa-chevron-circle-right"></i> Atque vero laudantium</a></li>
+                                                <li><a href="#"><i class="fa fa-chevron-circle-right"></i> Loat dolot aspree</a></li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="footer-content">
+                                        <h4 class="title text-default"><i class="fa fa-search pr-10"></i> Resources</h4>
+                                        <nav class="mb-20">
+                                            <ul class="nav nav-pills nav-stacked list-style-icons">
+                                                <li><a href="components-social-icons.html"><i class="fa fa-chevron-circle-right"></i> Vel consequatur</a></li>
+                                                <li><a href="components-buttons.html"><i class="fa fa-chevron-circle-right"></i> Provident obcaecati</a></li>
+                                                <li><a href="components-buttons.html"><i class="fa fa-chevron-circle-right"></i> Illo perspiciatis</a></li>
+                                                <li><a href="components-forms.html"><i class="fa fa-chevron-circle-right"></i> acilis maiores</a></li>
+                                                <li><a href="components-tabs-and-pills.html"><i class="fa fa-chevron-circle-right"></i> Enim modi</a></li>
+                                            </ul>
+                                        </nav>
+                                        <h4 class="title text-default"><i class="fa fa-users pr-10"></i> Staff/Faculty</h4>
+                                        <nav class="mb-20">
+                                            <ul class="nav nav-pills nav-stacked list-style-icons">
+                                                <li><a href="components-forms.html"><i class="fa fa-chevron-circle-right"></i> acilis maiores</a></li>
+                                                <li><a href="components-tabs-and-pills.html"><i class="fa fa-chevron-circle-right"></i> Enim modi</a></li>
+                                                <li><a target="_blank" href="http://htmlcoder.me/support"><i class="fa fa-chevron-circle-right"></i> Support</a></li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="footer-content">
+                                        <h4 class="title text-default"><i class="fa fa-file-text-o pr-10"></i> Admission</h4>
+                                        <nav class="mb-20">
+                                            <ul class="nav nav-pills nav-stacked list-style-icons">
+                                                <li><a href="components-forms.html"><i class="fa fa-chevron-circle-right"></i> Facilis maiores</a></li>
+                                                <li><a href="components-buttons.html"><i class="fa fa-chevron-circle-right"></i> Provident obcaecati</a></li>
+                                                <li><a href="components-social-icons.html"><i class="fa fa-chevron-circle-right"></i> Vel consequatur</a></li>
+                                                <li><a target="_blank" href="http://htmlcoder.me/support"><i class="fa fa-chevron-circle-right"></i> Support</a></li>
+                                            </ul>
+                                        </nav>
+                                        <h4 class="title text-default"><i class="fa fa-child pr-10"></i> Students</h4>
+                                        <nav class="mb-20">
+                                            <ul class="nav nav-pills nav-stacked list-style-icons">
+                                                <li><a href="components-buttons.html"><i class="fa fa-chevron-circle-right"></i> Illo perspiciatis</a></li>
+                                                <li><a href="components-tabs-and-pills.html"><i class="fa fa-chevron-circle-right"></i> Enim modi</a></li>
+                                                <li><a href="#"><i class="fa fa-chevron-circle-right"></i> Privacy</a></li>
+                                                <li><a href="components-social-icons.html"><i class="fa fa-chevron-circle-right"></i> Vel consequatur</a></li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="footer-content">
+                                        <h4 class="title text-default"><i class="fa fa-institution pr-10"></i> Schools</h4>
+                                        <nav class="mb-20">
+                                            <ul class="nav nav-pills nav-stacked list-style-icons">
+                                                <li><a href="components-buttons.html"><i class="fa fa-chevron-circle-right"></i> Consectetur adipisicing elit</a></li>
+                                                <li><a href="components-social-icons.html"><i class="fa fa-chevron-circle-right"></i> Lorem ipsum dolor sit</a></li>
+                                                <li><a href="components-tabs-and-pills.html"><i class="fa fa-chevron-circle-right"></i> Amet culpa</a></li>
+                                                <li><a href="components-forms.html"><i class="fa fa-chevron-circle-right"></i> Repudiandae porro doloribus</a></li>
+                                                <li><a href="components-buttons.html"><i class="fa fa-chevron-circle-right"></i> Rerum iure temporibus</a></li>
+                                                <li><a target="_blank" href="http://htmlcoder.me/support"><i class="fa fa-chevron-circle-right"></i> Atque vero laudantium</a></li>
+                                            </ul>
+                                        </nav>
+                                        <h4 class="title text-default"><i class="fa fa-info-circle pr-10"></i> Information</h4>
+                                        <nav class="mb-20">
+                                            <ul class="nav nav-pills nav-stacked list-style-icons">
+                                                <li><a href="components-buttons.html"><i class="fa fa-chevron-circle-right"></i> Consectetur adipisicing elit</a></li>
+                                                <li><a href="components-social-icons.html"><i class="fa fa-chevron-circle-right"></i> Lorem ipsum dolor sit</a></li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- .footer end -->
+
+                <!-- .subfooter start -->
+                <!-- ================ -->
+                <div class="subfooter default-bg">
+                    <div class="container">
+                        <div class="subfooter-inner">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p class="text-center"><span class="logo-font pr-10">The College</span> Copyright © 2016 The Project by <a class="link-light" target="_blank" href="http://htmlcoder.me">HtmlCoder</a>. All Rights Reserved</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- .subfooter end -->
+
+            </footer>
+            <!-- footer end -->
+            
         </div>
+        <!-- page-wrapper end -->
+
                 <!-- JavaScript files placed at the end of the document so the pages load faster -->
         <!-- ================================================== -->
         <!-- Jquery and Bootstap core js files -->
@@ -469,6 +690,7 @@
         <!-- Custom Scripts -->
         <script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
 
+        <!-- Django CMS Scripts -->
         {% render_block "js" %}
     </body>
 </html>

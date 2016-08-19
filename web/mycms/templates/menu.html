@@ -7,37 +7,26 @@
         {% if child.children %} dropdown{% endif %}"> -->
 
 
+            <li class="dropdown {% if child.ancestor or child.sibling %}active{% endif %}">
+                <a href="{{ child.get_absolute_url }}" class="dropdown-toggle" data-toggle="dropdown">{{ child.get_menu_title }}</a>                       <ul class="dropdown-menu">
 
-            <li class="dropdown {% if child.ancestor or child.sibling %} active{% endif %} mega-menu">
-                <a href="{{ child.get_absolute_url }}" class="dropdown-toggle" data-toggle="dropdown">{{ child.get_menu_title }}</a>              
-                <ul class="dropdown-menu">
-                    <!-- {% show_menu from_level to_level extra_inactive extra_active "submenu.html" "" "" child %} -->
-                    <li>
-                        <div class="row">
-                            <div class="col-md-12">
-
-                                <h4 class="title">{{ child.get_menu_title }}</h4>
-                                <ul class="divider"></ul>
-                                {% for col in child.children|columns:3 %}
-                                <div class="row">
-
-                                    <div class="col-sm-6 col-md-3">
-                                        <ul class="menu">
-                                        {% for child in col %}
-                                            <li> <h5 class="title"><a href="{{ child.get_absolute_url }}">{{ child.get_menu_title }} </a></h5></li>
-                                                {% for subchild in child.children %}
-                                                    <li><a href="{{ subchild.get_absolute_url }}">{{ subchild.get_menu_title }}</a></li>
-                                                {% endfor %}
-                                            <li class="divider"></li>
+                    
+                    {% for child in child.children %}
+                        {% if child.children %}
+                    
+                            <li class="dropdown ">
+                                <a  class="dropdown-toggle" data-toggle="dropdown" href="{{ child.get_absolute_url }}">{{ child.get_menu_title }}</a>
+                                    <ul class="dropdown-menu to-left">
+                                        {% for child in child.children %}
+                                            <li ><a href="{{ child.get_absolute_url }}">{{ child.get_menu_title }}</a></li>
                                         {% endfor %}
-                                        </ul>
-                                    </div>
-                                </div>
-                                {% endfor %}
-                            </div>
-                        </div>
-                    </li>
-                 </ul>               
+                                    </ul>
+                            </li>
+                        {% else %}
+                            <li ><a href="{{ child.get_absolute_url }}">{{ child.get_menu_title }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
             </li>
    <!--  </li> -->
     {% if class and forloop.last and not forloop.parentloop %}{% endif %}
